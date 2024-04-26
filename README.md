@@ -54,7 +54,7 @@ La gestion **VMM (Virtual Memory Management)** repose sur le mécanisme de pagin
 
 L'espace d'adressage est potentiellement supérieur à la mémoire physique de la machine et certaines adresses virtuelles peuvent correspondre à une donnée sur disque plutôt qu'en mémoire physique.
 
-La mémoire physique fait office de cache vers l'espace d'adressage (accès plus rapide mais taille inférieure  au disque).
+La mémoire physique fait office de cache vers l'espace d'adressage (accès plus rapide mais taille inférieure à celle du disque).
 
 Une application correspond à deux données :
 
@@ -64,6 +64,8 @@ Une application correspond à deux données :
 **Un processus** = La combinaison de ces deux données
 
 ## Fichiers
+
+### Opérations sur les fichiers
 
 Sous UNIX, on accède à un fichier du système par l'intermédiaire d'une **interface de programmation unique** associée à différentes opérations :
 
@@ -86,13 +88,11 @@ Les fichiers ne supportent pas forcément tous les mêmes opérations :
 
 Sous UNIX, certains fichiers supportent d'autres opérations (interfaces étendues) :
 
-* Opérations accept, bind pour les sockets
-* Opérations readdir pour les répertoires
-* Opérations ioctl pour les interactions directes entre les applications et les pilotes de périphérique
+* Opérations `accept` ou `bind` pour les sockets
+* Opérations `readdir` pour les répertoires
+* Opérations `ioctl` pour les interactions directes entre les applications et les pilotes de périphérique
   * Permet par exemple de modifier la fréquence d'échantillonnage d'une carte son ou la résolution d'une carte graphique
 * ...
-
-
 
 ### Espaces de nommage
 
@@ -106,9 +106,9 @@ Un fichier est identifiable par un chemin unique :
 
 Les fichiers spéciaux sont également présents dans l'espace de nommage.
 
-Certains fichiers n'apparaissent pas dans l'espace de nommage comme les sockets réseau.
+Certains fichiers n'apparaissent pas dans l'espace de nommage comme, par exemple, les sockets réseau.
 
-L'espace de nommage est unique mais il peut être constitué des plusieurs sous arborescences (système de fichier monté - file system) :
+L'espace de nommage est unique mais il peut être constitué de plusieurs sous arborescences (système de fichier monté ou file system) :
 
 * Données physiques (disque FAT ou ext2)
 * Données virtuelles (/proc)
