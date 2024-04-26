@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Kernel](README.md)
 * [Directories](directories/README.md)
   * [/root](directories/root.md)
   * [/home](directories/home.md)
