@@ -54,7 +54,7 @@ La gestion **VMM (Virtual Memory Management)** repose sur le mécanisme de pagin
 
 L'espace d'adressage est potentiellement supérieur à la mémoire physique de la machine et certaines adresses virtuelles peuvent correspondre à une donnée sur disque plutôt qu'en mémoire physique.
 
-La mémoire physique fait office de cache vers l'espace d'adressage (accès plus rapide mais taille inférieure à la taille du disque).
+La mémoire physique fait office de cache vers l'espace d'adressage (accès plus rapide mais taille inférieure  au disque).
 
 Une application correspond à deux données :
 
