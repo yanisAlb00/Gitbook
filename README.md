@@ -33,7 +33,7 @@ Principaux types de synchronisations :
 * Conditions
 * Files de message
 
-Les synchronisations permettent par exemple de protéger ou une ressource matérielle en bloquant l'exécution d'instructions grâce à une ressource logique qui se trouve avant dans la file d'exécution.
+Les synchronisations permettent par exemple de protéger une ressource matérielle en bloquant l'exécution d'instructions grâce à une ressource logique qui la précède dans la file d'exécution.
 
 ### Espace d’adressage et mémoire virtuelle
 
@@ -104,14 +104,6 @@ Un fichier est identifiable par un chemin unique :
 /home/toto/.bashrc
 ```
 
-
-
-
-
-{% file src=".gitbook/assets/linux_kernel.pdf" %}
-Source
-{% endfile %}
-
 Les fichiers spéciaux sont également présents dans l'espace de nommage.
 
 Certains fichiers n'apparaissent pas dans l'espace de nommage comme les sockets réseau.
@@ -120,4 +112,8 @@ L'espace de nommage est unique mais il peut être constitué des plusieurs sous 
 
 * Données physiques (disque FAT ou ext2)
 * Données virtuelles (/proc)
+
+{% file src=".gitbook/assets/linux_kernel.pdf" %}
+Source
+{% endfile %}
 
