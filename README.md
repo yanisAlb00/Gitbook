@@ -126,25 +126,12 @@ On distingue 2 modes d'exécution des instructions supportées par le processeur
 * Le mode privilégié
 * Le mode utilisateur
 
-Pour faire appel aux services du noyau, les applications passent par des **appels système (ou syscall)**.
+\-> Pour faire appel aux services du noyau, les applications passent par des **appels système (ou syscall)**.
 
 appel système = opération réalisée par une application avec changement de privilèges
 
 
 
 {% file src=".gitbook/assets/linux_kernel.pdf" %}
-Source
+[https://www.irif.fr/\~carton/Enseignement/Architecture/Cours/Virtual/linux.pdf](https://www.irif.fr/\~carton/Enseignement/Architecture/Cours/Virtual/linux.pdf)
 {% endfile %}
-
-### Interactions entre le noyau et les applications utilisateur
-
-Les applications ne sont pas autorisées à modifier leur espace d'adressage pour accéder à l'espace d'adressage d'une autre application.
-
-Ce type d'opération est dite "**privilégiée**" et réservée au noyau.
-
-Il y a par conséquent 2 modes d'instructions supportées par le processeur :
-
-* Mode utilisateur (non privilégié)
-* Mode noyau (privilégié)
-
-\-> Pour faire appel aux services du noyau, les applications réalisent des appels systèmes (syscall) qui correspond à un appel de fonction avec changement de privilège.
