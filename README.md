@@ -115,6 +115,23 @@ L'espace de nommage est unique mais il peut être constitué de plusieurs sous a
 
 
 
+### Interaction entre le noyau et les applications utilisateur
+
+Certaines opérations sont dites **privilégiées** et ne peuvent être réalisées que par le **noyau**.
+
+Par exemple, une application ne peut pas modifier son espace d'adressage ni accéder à l'espace d'adressage d'une autre application.
+
+On distingue 2 modes d'exécution des instructions supportées par le processeur :
+
+* Le mode privilégié
+* Le mode utilisateur
+
+Pour faire appel aux services du noyau, les applications passent par des **appels système (ou syscall)**.
+
+appel système = opération réalisée par une application avec changement de privilèges
+
+
+
 {% file src=".gitbook/assets/linux_kernel.pdf" %}
 Source
 {% endfile %}
