@@ -41,7 +41,7 @@ Set the following setting **Computer Configuration -> Policies -> Windows Settin
 
 Set the following setting **Computer Configuration -> Policies -> Windows Settings -> Security Settings -> Advanced Audit Configuration** to the following:
 
-All systems :
+<mark style="color:blue;">**All systems :**</mark>
 
 * **Audit Credential Validation**: Success, Failure
 * **Audit Security Group Management**: Success, Failure
@@ -53,21 +53,21 @@ All systems :
 * **Audit Detailed File Share**: Success
 * **Audit File Share**: Success, Failure
 * **Audit Other Object Access Events**: Success, Failure
-* **Audit SAM:** No Audit
+* <mark style="background-color:red;">**Audit SAM:**</mark> <mark style="background-color:red;"></mark><mark style="background-color:red;">No Audit</mark>
 * **Audit Policy Change:** Success, Failure
 * **Audit Authentication Policy Change:** Success, Failure
 * **Audit MPSSVC Rule-Level Policy Change**: Failure
-* **Audit Non Sensitive Privilege Use**: No Audit
-* **Audit Sensitive Privilege Use**: No Audit
+* <mark style="background-color:red;">**Audit Non Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
+* <mark style="background-color:red;">**Audit Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
 * **Audit Other System Events**: Success, Failure
 * **Audit System Integrity**: Success, Failure
 
-Domain Controllers :
+<mark style="color:blue;">**Domain Controllers :**</mark>
 
 * **Audit Kerberos Authentication Service**: Success, Failure
 * **Audit Kerberos Service Ticket Operations**: Success, Failure
 * **Audit Computer Account Management**: Success, Failure
-* **Audit Distribution Group Management**: No Audit
+* <mark style="background-color:red;">**Audit Distribution Group Management**</mark><mark style="background-color:red;">: No Audit</mark>
 * **Audit Other Account Management Events**: Success, Failure
 * **Audit Directory Service Changes**: Success, Failure
 
@@ -159,47 +159,30 @@ Set the following setting **Computer Configuration -> Policies -> Windows Settin
 
 Set the following setting **Computer Configuration -> Policies -> Windows Settings -> Security Settings -> Advanced Audit Configuration** to the following:
 
+<mark style="color:blue;">**All systems :**</mark>
+
 * **Audit Credential Validation**: Success, Failure
-* **Audit Other Account Logon Events**: Success, Failure
-* **Audit Kerberos Authentication Service**: Success, Failure
-* **Audit Kerberos Service Ticket Operations**: Success, Failure
-* **Audit Computer Account Management**: Success, Failure
-* **Audit Distribution Group Management**: Success, Failure
-* **Audit Other Account Management Events**: Success, Failure
 * **Audit Security Group Management**: Success, Failure
 * **Audit User Account Management**: Success, Failure
-* **Audit DPAPI Activity**: Success, Failure
-* **Audit PNP Activity**: Success, Failure
 * **Audit Process Creation**: Success, Failure
-* **Audit Process Termination**: Success, Failure
-* **Audit Detailed Directory Service Replication**: Success, Failure
-* **Audit Directory Service Access**: Success, Failure
-* **Audit Directory Service Changes**: Success, Failure
-* **Audit Directory Service Replication**: Success, Failure
-* **Audit Account Lockout**: Success, Failure
-* **Audit User/Device Claims**: Success, Failure
-* **Audit Group Membership**: Success, Failure
-* **Audit Logoff**: Success, Failure
+* **Audit Logoff**: Success
 * **Audit Logon**: Success, Failure
-* **Audit Other Logon/Logoff Events**: Success, Failure
-* **Audit Special Logon**: Success, Failure
-* **Audit Detailed File Share**: Failure
+* **Audit Other Account Logon Events**: Success, Failure
+* **Audit Detailed File Share**: Success
 * **Audit File Share**: Success, Failure
-* **Audit File System**: Success, Failure
-* **Audit Filtering Platform Connection**: Failure
 * **Audit Other Object Access Events**: Success, Failure
-* **Audit Registry**: Success, Failure
-* **Audit Removable Storage**: Success, Failure
-* **Audit Audit Policy Change**: Success, Failure
-* **Audit Authentication Policy Change**: Success, Failure
-* **Audit MPSSVC Rule-Level Policy Change**: Success, Failure
-* **Audit Other Policy Change Events**: Success, Failure
-* **Audit Non Sensitive Privilege Use**: Failure
-* **Audit Sensitive Privilege Use**: Success, Failure
+* <mark style="background-color:red;">**Audit SAM:**</mark> <mark style="background-color:red;"></mark><mark style="background-color:red;">No Audit</mark>
+* **Audit Policy Change:** Success, Failure
+* **Audit Authentication Policy Change:** Success, Failure
+* **Audit MPSSVC Rule-Level Policy Change**: Failure
+* <mark style="background-color:red;">**Audit Non Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
+* <mark style="background-color:red;">**Audit Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
 * **Audit Other System Events**: Success, Failure
-* **Audit Security State Change**: Success, Failure
-* **Audit Security System Extension**: Success, Failure
 * **Audit System Integrity**: Success, Failure
+
+<mark style="color:blue;">**Network Policy Server :**</mark>
+
+* **Audit Network Policy Server :** Success, Failure
 
 Set the following setting **Computer Configuration -> Administrative Templates -> System -> Audit Process Creation** to the following:
 
@@ -287,47 +270,30 @@ Set the following setting **Computer Configuration -> Policies -> Windows Settin
 
 Set the following setting **Computer Configuration -> Policies -> Windows Settings -> Security Settings -> Advanced Audit Configuration** to the following:
 
+<mark style="color:blue;">**All systems :**</mark>
+
 * **Audit Credential Validation**: Success, Failure
-* **Audit Other Account Logon Events**: Success, Failure
-* **Audit Kerberos Authentication Service**: Success, Failure
-* **Audit Kerberos Service Ticket Operations**: Success, Failure
-* **Audit Computer Account Management**: Success, Failure
-* **Audit Distribution Group Management**: Success, Failure
-* **Audit Other Account Management Events**: Success, Failure
 * **Audit Security Group Management**: Success, Failure
 * **Audit User Account Management**: Success, Failure
-* **Audit DPAPI Activity**: Success, Failure
-* **Audit PNP Activity**: Success, Failure
 * **Audit Process Creation**: Success, Failure
-* **Audit Process Termination**: Success, Failure
-* **Audit Detailed Directory Service Replication**: Success, Failure
-* **Audit Directory Service Access**: Success, Failure
-* **Audit Directory Service Changes**: Success, Failure
-* **Audit Directory Service Replication**: Success, Failure
-* **Audit Account Lockout**: Success, Failure
-* **Audit User/Device Claims**: Success, Failure
-* **Audit Group Membership**: Success, Failure
-* **Audit Logoff**: Success, Failure
+* **Audit Logoff**: Success
 * **Audit Logon**: Success, Failure
-* **Audit Other Logon/Logoff Events**: Success, Failure
-* **Audit Special Logon**: Success, Failure
-* **Audit Detailed File Share**: Failure
+* **Audit Other Account Logon Events**: Success, Failure
+* **Audit Detailed File Share**: Success
 * **Audit File Share**: Success, Failure
-* **Audit File System**: Success, Failure
-* **Audit Filtering Platform Connection**: Failure
 * **Audit Other Object Access Events**: Success, Failure
-* **Audit Registry**: Success, Failure
-* **Audit Removable Storage**: Success, Failure
-* **Audit Audit Policy Change**: Success, Failure
-* **Audit Authentication Policy Change**: Success, Failure
-* **Audit MPSSVC Rule-Level Policy Change**: Success, Failure
-* **Audit Other Policy Change Events**: Success, Failure
-* **Audit Non Sensitive Privilege Use**: Failure
-* **Audit Sensitive Privilege Use**: Success, Failure
+* <mark style="background-color:red;">**Audit SAM:**</mark> <mark style="background-color:red;"></mark><mark style="background-color:red;">No Audit</mark>
+* **Audit Policy Change:** Success, Failure
+* **Audit Authentication Policy Change:** Success, Failure
+* **Audit MPSSVC Rule-Level Policy Change**: Failure
+* <mark style="background-color:red;">**Audit Non Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
+* <mark style="background-color:red;">**Audit Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
 * **Audit Other System Events**: Success, Failure
-* **Audit Security State Change**: Success, Failure
-* **Audit Security System Extension**: Success, Failure
 * **Audit System Integrity**: Success, Failure
+
+<mark style="color:blue;">**ADCS :**</mark>
+
+* **Audit Certification Services** : Success, Failure
 
 Set the following setting **Computer Configuration -> Administrative Templates -> System -> Audit Process Creation** to the following:
 
@@ -416,37 +382,25 @@ Set the following setting **Computer Configuration -> Policies -> Windows Settin
 
 Set the following setting **Computer Configuration -> Policies -> Windows Settings -> Security Settings -> Advanced Audit Configuration** to the following:
 
+<mark style="color:blue;">**All systems :**</mark>
+
 * **Audit Credential Validation**: Success, Failure
-* **Audit Other Account Logon Events**: Success, Failure
 * **Audit Security Group Management**: Success, Failure
 * **Audit User Account Management**: Success, Failure
-* **Audit DPAPI Activity**: Success, Failure
-* **Audit PNP Activity**: Success, Failure
 * **Audit Process Creation**: Success, Failure
-* **Audit Process Termination**: Success, Failure
-* **Audit Account Lockout**: Success, Failure
-* **Audit User/Device Claims**: Success, Failure
-* **Audit Group Membership**: Success, Failure
-* **Audit Logoff**: Success, Failure
+* **Audit Logoff**: Success
 * **Audit Logon**: Success, Failure
-* **Audit Other Logon/Logoff Events**: Success, Failure
-* **Audit Special Logon**: Success, Failure
-* **Audit Detailed File Share**: Success, Failure
+* **Audit Other Account Logon Events**: Success, Failure
+* **Audit Detailed File Share**: Success
 * **Audit File Share**: Success, Failure
-* **Audit File System**: Success, Failure
-* **Audit Filtering Platform Connection**: Failure
 * **Audit Other Object Access Events**: Success, Failure
-* **Audit Registry**: Success, Failure
-* **Audit Removable Storage**: Success, Failure
-* **Audit Audit Policy Change**: Success, Failure
-* **Audit Authentication Policy Change**: Success, Failure
-* **Audit MPSSVC Rule-Level Policy Change**: Success, Failure
-* **Audit Other Policy Change Events**: Success, Failure
-* **Audit Non Sensitive Privilege Use**: Failure
-* **Audit Sensitive Privilege Use**: Success, Failure
+* <mark style="background-color:red;">**Audit SAM:**</mark> <mark style="background-color:red;"></mark><mark style="background-color:red;">No Audit</mark>
+* **Audit Policy Change:** Success, Failure
+* **Audit Authentication Policy Change:** Success, Failure
+* **Audit MPSSVC Rule-Level Policy Change**: Failure
+* <mark style="background-color:red;">**Audit Non Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
+* <mark style="background-color:red;">**Audit Sensitive Privilege Use**</mark><mark style="background-color:red;">: No Audit</mark>
 * **Audit Other System Events**: Success, Failure
-* **Audit Security State Change**: Success, Failure
-* **Audit Security System Extension**: Success, Failure
 * **Audit System Integrity**: Success, Failure
 
 Set the following setting **Computer Configuration -> Administrative Templates -> System -> Audit Process Creation** to the following:
