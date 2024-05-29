@@ -6,3 +6,4 @@
 * [Basics](basics/README.md)
   * [vi](basics/vi.md)
 * [Linux Administration CheatSheet](linux-administration-cheatsheet.md)
+* [Sudo](sudo.md)
