@@ -3,6 +3,7 @@
 * [001\_Scanning](README.md)
   * [Nmap](001\_scanning/nmap.md)
   * [DNS](001\_scanning/dns.md)
+  * [Vulnerabilty Assessement](001\_scanning/vulnerabilty-assessement.md)
 * [002\_Footprinting](002\_footprinting/README.md)
   * [SMB](002\_footprinting/smb.md)
   * [SMTP](002\_footprinting/smtp.md)
