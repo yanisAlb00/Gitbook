@@ -22,7 +22,7 @@ La commande sc permet de gérer les services en ligne de commande.
 
 Dans l'utilitaire services.msc , on peut lister les services qui dépendent d'un certain service et également les services auxquels il dépend (clique-droit / Propriétés) :\
 \
-![](.gitbook/assets/image.png)\
+![](<.gitbook/assets/image (1).png>)\
 
 
 ## Les services dans la base de registre
@@ -40,7 +40,7 @@ La base de registre est accessible via :
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-![](<.gitbook/assets/image (1).png>)\
+![](<.gitbook/assets/image (1) (1).png>)\
 
 
 La clef _Start_ qui permet de définir le type de démarrage, ainsi la valeur :
