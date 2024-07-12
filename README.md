@@ -1,8 +1,2 @@
-# Introduction
+# 001\_Scanning
 
-Windows is a non-open-source operating system.\
-
-
-```powershell
-whoami
-```
