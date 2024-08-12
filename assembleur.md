@@ -2,7 +2,7 @@
 
 2 principaux types de langages pour la décompilation de binaire :&#x20;
 
-* AT\&T : Syntaxe avec de nombreux
+* AT\&T : Syntaxe avec de nombreux $ et %
 * INTEL : Syntaxe + simple
 
 ```
