@@ -21,7 +21,7 @@ objdump -M intel -d a.out
 \
 0: = adresse mémoire en Hexadécimal
 
-55 = Instruction codée sur 2 bytes (2 caractères hexa décimal
+55 = Instruction codée sur 1 byte (2 caractères hexa décimal)
 
 push = traduction de l'instruction 55
 
