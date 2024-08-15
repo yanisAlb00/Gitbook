@@ -138,3 +138,36 @@ End of assembler dump.
 pwndbg> 
 ```
 
+## Storage of bytes in memory address
+
+info register show the content of a specific register
+
+```
+(gdb) info register eip
+```
+
+x command (for examine) examines the memory
+
+```
+x/o 0x8048384 -> displays in octal
+x/x $eip -> displays in hexadecimal
+x/u $eip -> displays in unsigned (standard base-10
+x/t $eip -> displays in binary
+
+```
+
+A memory address can store many bytes :
+
+* A WORD or DWORD (4-Byte) -> default size (w)
+* A HALFWORD or A SHORT (2-Byte) (h)
+* A SINGLE (1-Byte) (b)
+* A GIANT (8-Byte) (g)
+
+Bytes are stored in little-endian byte order which means the least significant byte is stored in first&#x20;
+
+```
+(gdb) x/4ub
+0x8048384    <main+16>:    199    69    252    0
+
+// So the value is : 0*256^3 + 252*256^2 + 69*256^1 + 199*256^0 = 16532935
+```
