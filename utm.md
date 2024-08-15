@@ -15,5 +15,15 @@ Téléchargement de : [Image Ubuntu](https://cdimage.ubuntu.com/releases/20.04.5
   Execute the following command to install Xubuntu desktop system:\
   `$ sudo apt install xubuntu-desktop`
 
+**KALI Installation on Mac :**&#x20;
 
+{% embed url="https://medium.com/womenintechnology/install-kali-linux-virtual-machine-on-apple-m1-with-utm-6c80d930bdb0" %}
 
+To share clipboard between host and guest :&#x20;
+
+```
+sudo apt install spice-vdagent spice-webdavd
+```
+
+\
+and restart
