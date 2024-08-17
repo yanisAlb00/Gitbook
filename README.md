@@ -1,9 +1,7 @@
-# Fichiers de virtualisation
+# Processeurs
 
-* vhd est le format historique Microsoft pour VirtualPC ;
-* vmdk est le format historique VMWare ;
-* vdi est le format utilisé par VirtualBox.
+32 bits : Un registre ne peut accéder qu'à 4 GO de RAM
 
-OVA = OVF + VDI/VMDK/VHD
+64 bits : Un registre peut accéder à plus de 17 milliards de GO de RAM
 
-* OVF est uniquement le descriptif de la configuration de la VM. Il doit obligatoirement être associé à un fichier disque
+Les cœurs multiples permettent d'effectuer un plus grand nombre de calculs par seconde, ce qui peut augmenter la puissance de traitement et accélérer le fonctionnement de l'ordinateur.

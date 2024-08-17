@@ -8,16 +8,29 @@
 * INTEL : Syntaxe + simple
 
 ```
-objdump -M intel -d a.out
+objdump -M intel -d a.out | grep -A20 main.:   
+0000000000001139 <main>:
+    1139:       55                      push   rbp
+    113a:       48 89 e5                mov    rbp,rsp
+    113d:       48 83 ec 10             sub    rsp,0x10
+    1141:       c7 45 fc 00 00 00 00    mov    DWORD PTR [rbp-0x4],0x0
+    1148:       eb 13                   jmp    115d <main+0x24>
+    114a:       48 8d 05 b3 0e 00 00    lea    rax,[rip+0xeb3]        # 2004 <_IO_stdin_used+0x4>
+    1151:       48 89 c7                mov    rdi,rax
+    1154:       e8 d7 fe ff ff          call   1030 <puts@plt>
+    1159:       83 45 fc 01             add    DWORD PTR [rbp-0x4],0x1
+    115d:       83 7d fc 09             cmp    DWORD PTR [rbp-0x4],0x9
+    1161:       7e e7                   jle    114a <main+0x11>
+    1163:       b8 00 00 00 00          mov    eax,0x0
+    1168:       c9                      leave
+    1169:       c3                      ret
 
-0000000000000000 <main>:
-   0:	55                   	push   rbp
-   1:	48 89 e5             	mov    rbp,rsp
-   4:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
-   b:	83 45 fc 14          	add    DWORD PTR [rbp-0x4],0x14
-   f:	90                   	nop
-  10:	5d                   	pop    rbp
-  11:	c3                   	ret   
+Disassembly of section .fini:
+
+000000000000116c <_fini>:
+    116c:       48 83 ec 08             sub    rsp,0x8
+    1170:       48 83 c4 08             add    rsp,0x8
+
 ```
 
 \
@@ -40,11 +53,46 @@ Le format destination,source peut contenir différentes valeurs :&#x20;
 Les registres sont des variables internes au processeur utilisées pour répondre à différents besoins.
 
 ```
-gdb -q ./a.out
-
+gdb -q ./a.out  
+Reading symbols from ./a.out...
+(No debugging symbols found in ./a.out)
 (gdb) break main
+Breakpoint 1 at 0x113d
 (gdb) run
+Starting program: /home/yanis/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, 0x000055555555513d in main ()
 (gdb) info registers
+rax            0x555555555139      93824992235833
+rbx            0x7fffffffdf68      140737488346984
+rcx            0x555555557dd8      93824992247256
+rdx            0x7fffffffdf78      140737488347000
+rsi            0x7fffffffdf68      140737488346984
+rdi            0x1                 1
+rbp            0x7fffffffde50      0x7fffffffde50
+rsp            0x7fffffffde50      0x7fffffffde50
+r8             0x0                 0
+r9             0x7ffff7fcfb30      140737353939760
+r10            0x7fffffffdb80      140737488345984
+r11            0x206               518
+r12            0x0                 0
+r13            0x7fffffffdf78      140737488347000
+r14            0x7ffff7ffd000      140737354125312
+r15            0x555555557dd8      93824992247256
+rip            0x55555555513d      0x55555555513d <main+4>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x7ffff7fad680      140737353799296
+gs_base        0x0                 0
+(gdb) 
+
 ```
 
 [https://cs.wellesley.edu/\~cs240/s16/slides/x86-basics.pdf](https://cs.wellesley.edu/\~cs240/s16/slides/x86-basics.pdf)
@@ -96,46 +144,28 @@ jump = aller à une prochaine instruction
 ## Faire un débug avancé en soumettant le code source à gdb
 
 ```
-gcc -g helloworld.c 
-[Aug 13, 2024 - 11:36:12 (UTC)] exegol-oscp_lab hacking_art_of_exploitation # gdb -q ./a.out     
-pwndbg: loaded 154 pwndbg commands and 47 shell commands. Type pwndbg [--shell | --all] [filter] for a list.
-pwndbg: created $rebase, $base, $ida GDB functions (can be used with print/break)
-/root/.gdbinit:2: Error in sourced command file:
-No symbol table is loaded.  Use the "file" command.
+gdb -q ./a.out                               
 Reading symbols from ./a.out...
-------- tip of the day (disable with set show-tips off) -------
-GDB's follow-fork-mode parameter can be used to set whether to trace parent or child after fork() calls
-pwndbg> list
-1	#include <stdio.h>
-2	int main() {
-3	
-4		int i;
-5	   
-6		// printf() displays the string inside quotation
-7		for(i=0;i<10;i++)
-8		{        
-9			printf("Hello, World! \n");
-10		}	
-pwndbg> disassemble main
+(No debugging symbols found in ./a.out)
+(gdb) set disassembly-flavor intel
+(gdb) disassemble main
 Dump of assembler code for function main:
-   0x0000000000000754 <+0>:	stp	x29, x30, [sp, #-32]!
-   0x0000000000000758 <+4>:	mov	x29, sp
-   0x000000000000075c <+8>:	str	wzr, [sp, #28]
-   0x0000000000000760 <+12>:	b	0x77c <main+40>
-   0x0000000000000764 <+16>:	adrp	x0, 0x0
-   0x0000000000000768 <+20>:	add	x0, x0, #0x7b0
-   0x000000000000076c <+24>:	bl	0x630 <puts@plt>
-   0x0000000000000770 <+28>:	ldr	w0, [sp, #28]
-   0x0000000000000774 <+32>:	add	w0, w0, #0x1
-   0x0000000000000778 <+36>:	str	w0, [sp, #28]
-   0x000000000000077c <+40>:	ldr	w0, [sp, #28]
-   0x0000000000000780 <+44>:	cmp	w0, #0x9
-   0x0000000000000784 <+48>:	b.le	0x764 <main+16>
-   0x0000000000000788 <+52>:	mov	w0, #0x0                   	// #0
-   0x000000000000078c <+56>:	ldp	x29, x30, [sp], #32
-   0x0000000000000790 <+60>:	ret
+   0x0000000000001139 <+0>:     push   rbp
+   0x000000000000113a <+1>:     mov    rbp,rsp
+   0x000000000000113d <+4>:     sub    rsp,0x10
+   0x0000000000001141 <+8>:     mov    DWORD PTR [rbp-0x4],0x0
+   0x0000000000001148 <+15>:    jmp    0x115d <main+36>
+   0x000000000000114a <+17>:    lea    rax,[rip+0xeb3]        # 0x2004
+   0x0000000000001151 <+24>:    mov    rdi,rax
+   0x0000000000001154 <+27>:    call   0x1030 <puts@plt>
+   0x0000000000001159 <+32>:    add    DWORD PTR [rbp-0x4],0x1
+   0x000000000000115d <+36>:    cmp    DWORD PTR [rbp-0x4],0x9
+   0x0000000000001161 <+40>:    jle    0x114a <main+17>
+   0x0000000000001163 <+42>:    mov    eax,0x0
+   0x0000000000001168 <+47>:    leave
+   0x0000000000001169 <+48>:    ret
 End of assembler dump.
-pwndbg> 
+
 ```
 
 ## Storage of bytes in memory address
@@ -143,7 +173,17 @@ pwndbg>
 info register show the content of a specific register
 
 ```
-(gdb) info register eip
+(gdb) break main
+Breakpoint 1 at 0x113d
+(gdb) run
+Starting program: /home/yanis/a.out 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, 0x000055555555513d in main ()
+(gdb) i r rip
+rip            0x55555555513d      0x55555555513d <main+4>
+
 ```
 
 x command (for examine) examines the memory
@@ -166,8 +206,12 @@ A memory address can store many bytes :
 Bytes are stored in little-endian byte order which means the least significant byte is stored in first&#x20;
 
 ```
-(gdb) x/4ub
-0x8048384    <main+16>:    199    69    252    0
+(gdb) x/4ub $rip
+0x55555555513d <main+4>:        72      131     236     16
 
-// So the value is : 0*256^3 + 252*256^2 + 69*256^1 + 199*256^0 = 16532935
+// So the value is : 
+bc -ql
+16*(256^3) + 236*(256^2) + 131*(256^1) + 72*(256^0)
+283935560
+
 ```
