@@ -34,7 +34,7 @@ Disassembly of section .fini:
 ```
 
 \
-0: = adresse mémoire en Hexadécimal
+1139: = adresse mémoire en Hexadécimal
 
 55 = Instruction codée sur 1 byte (2 caractères hexa décimal)
 
@@ -215,3 +215,58 @@ bc -ql
 283935560
 
 ```
+
+It is also possible to examine instructions :&#x20;
+
+```
+(gdb) info register $rip
+rip            0x55555555513d      0x55555555513d <main+4>
+(gdb) x/i $rip
+=> 0x55555555513d <main+4>:     sub    $0x10,%rsp
+(gdb) x/3i $rip
+=> 0x55555555513d <main+4>:     sub    $0x10,%rsp
+   0x555555555141 <main+8>:     movl   $0x0,-0x4(%rbp)
+   0x555555555148 <main+15>:    jmp    0x55555555515d <main+36>
+(gdb) x/7xb $rip
+0x55555555513d <main+4>:        0x48    0x83    0xec    0x10    0xc7    0x450xfc
+
+```
+
+## Example of memory content during program execution
+
+1. Observe memory content at the beggining
+
+The following instruction will move 0 to the memory located at the address stored in the RBP register minus 4
+
+```
+0x555555555141 <main+8>:     movl   $0x0,-0x4(%rbp)
+```
+
+Examine the content of rbp register minus 4
+
+```
+(gdb) info register rbp
+rbp            0x7fffffffde50      0x7fffffffde50
+(gdb) x/4xb $rbp-4
+0x7fffffffde4c: 0xff    0x7f    0x00    0x00
+(gdb) x/4xb 0x7fffffffde4c
+0x7fffffffde4c: 0xff    0x7f    0x00    0x00
+(gdb) print $rbp - 4
+$1 = (void *) 0x7fffffffde4c
+
+```
+
+\-> Note that 0x7fffffffde50-4 = 0x7fffffffde4c
+
+At this time it contains random garbage bytes that will be zeroed out during next instruction
+
+2. Go to next instruction
+
+```
+(gdb) nexti
+0x0000555555555148 in main ()
+(gdb) x/4xb 0x7fffffffde4c
+0x7fffffffde4c: 0x00    0x00    0x00    0x00
+
+```
+
