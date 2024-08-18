@@ -10,3 +10,5 @@
 * [Grep, awk, sed](grep-awk-sed.md)
 * [Assembleur](assembleur.md)
 * [Variables in C](variables-in-c.md)
+* [Pointers](pointers.md)
+* [Typecasting](typecasting.md)
