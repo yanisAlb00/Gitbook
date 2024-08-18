@@ -12,3 +12,4 @@
 * [Variables in C](variables-in-c.md)
 * [Pointers](pointers.md)
 * [Typecasting](typecasting.md)
+* [Memory Segmentation](memory-segmentation.md)
