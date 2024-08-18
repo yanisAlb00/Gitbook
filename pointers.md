@@ -32,7 +32,7 @@ int main() {
 }
 ```
 
-operand is used to get the value inside the memory located at the address stored by the pointer :thumbsup:
+`*`operand is used to get the value inside the memory located at the address stored by the pointer :
 
 ```c
 #include <stdio.h>
