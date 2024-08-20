@@ -1,5 +1,7 @@
 # Memory Segmentation
 
+## Segments
+
 A compiled program's memory is divided into 5 Segments :&#x20;
 
 1. **text segment**
@@ -24,3 +26,43 @@ A compiled program's memory is divided into 5 Segments :&#x20;
    2. access = writable
    3. not fixed size
    4. it grows upward in a visual listing of memory toward lower memory addresses
+
+## Examples of memory addresses of different variables
+
+* global or static variable which is initialized : 0x080497f8 (data segment)
+
+```c
+int initialized = 5;
+```
+
+* global or static variable which is not initialized : 0x080497ec (bss segment)
+
+```c
+int not_initialized;
+```
+
+* heap variable : 0x080497f0 (heap segment)
+
+```c
+int main()
+{
+    int *heap_var;
+    heap_var = (int)malloc(4);
+}
+```
+
+* local variables : very high addresses (stack segment)
+  * local\_var of main : higher address than local\_var of function 0xbffff834
+  * local\_var of function : smaller address than local\_var of main 0xbffff814
+
+```c
+void function
+{
+    int local_var;
+}
+int main()
+{
+    int local_var;
+    function();
+}
+```
