@@ -1,6 +1,7 @@
 # Table of contents
 
 * [001\_Scanning](README.md)
+  * [Information Gathering](001\_scanning/information-gathering.md)
   * [Nmap](001\_scanning/nmap.md)
   * [DNS](001\_scanning/dns.md)
   * [Vulnerabilty Assessement](001\_scanning/vulnerabilty-assessement.md)
