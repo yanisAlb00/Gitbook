@@ -27,16 +27,12 @@
       * [CVE-2021-44228 : Unifi](004\_exploits/log4j/cve-2021-44228/cve-2021-44228-unifi.md)
 * [005\_Shells](005\_shells/README.md)
   * [Interactive Shells](005\_shells/interactive-shells.md)
-
-## 006\_Active\_Directory
-
-* [Introduction](006\_active\_directory/introduction.md)
-
-***
-
-* [007\_Lateralisation](007\_lateralisation.md)
-* [008\_PrivEsc](008\_privesc/README.md)
-  * [Linux](008\_privesc/linux/README.md)
-    * [SetUID Privilege escalation](008\_privesc/linux/setuid-privilege-escalation.md)
-  * [Windows](008\_privesc/windows.md)
-* [009\_Persistence](009\_persistence.md)
+* [006\_Active\_Directory](006\_active\_directory/README.md)
+  * [Introduction](006\_active\_directory/introduction.md)
+  * [Recon](006\_active\_directory/recon.md)
+* [007\_Lateralisation](006\_lateralisation.md)
+* [008\_PrivEsc](007\_privesc/README.md)
+  * [Linux](007\_privesc/linux/README.md)
+    * [SetUID Privilege escalation](007\_privesc/linux/setuid-privilege-escalation.md)
+  * [Windows](007\_privesc/windows.md)
+* [009\_Persistence](008\_persistence.md)
