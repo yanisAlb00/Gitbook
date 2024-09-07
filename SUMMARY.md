@@ -30,6 +30,7 @@
 * [006\_Active\_Directory](006\_active\_directory/README.md)
   * [Introduction](006\_active\_directory/introduction.md)
   * [Recon](006\_active\_directory/recon.md)
+  * [Attack authentication](006\_active\_directory/attack-authentication.md)
 * [007\_Lateralisation](006\_lateralisation.md)
 * [008\_PrivEsc](007\_privesc/README.md)
   * [Linux](007\_privesc/linux/README.md)
