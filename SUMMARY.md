@@ -30,6 +30,7 @@
 * [006\_Active\_Directory](006\_active\_directory/README.md)
   * [Introduction](006\_active\_directory/introduction.md)
   * [Recon](006\_active\_directory/recon.md)
+  * [NTLM vs Kerberos](006\_active\_directory/ntlm-vs-kerberos.md)
   * [Pre-authentication Kerberos](006\_active\_directory/pre-authentication-kerberos.md)
   * [Internal Password Spraying](006\_active\_directory/internal-password-spraying.md)
   * [Credentials Enumeration](006\_active\_directory/credentials-enumeration.md)
