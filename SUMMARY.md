@@ -35,6 +35,7 @@
   * [Internal Password Spraying](006\_active\_directory/internal-password-spraying.md)
   * [Credentials Enumeration](006\_active\_directory/credentials-enumeration.md)
   * [AS-REP Roasting](006\_active\_directory/as-rep-roasting.md)
+  * [Kerberoasting](006\_active\_directory/kerberoasting.md)
 * [007\_Lateralisation](006\_lateralisation.md)
 * [008\_PrivEsc](007\_privesc/README.md)
   * [Linux](007\_privesc/linux/README.md)

