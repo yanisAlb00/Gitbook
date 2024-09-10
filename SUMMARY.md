@@ -16,6 +16,7 @@
   * [API Testing](003\_web/api-testing.md)
   * [Web Access Control](003\_web/web-access-control.md)
   * [Password attacks](003\_web/password-attacks.md)
+  * [Password mutation](003\_web/password-mutation.md)
 * [004\_Exploits](004\_exploits/README.md)
   * [Finding exploits](004\_exploits/finding-exploits.md)
   * [Executing Exploits](004\_exploits/executing-exploits.md)
