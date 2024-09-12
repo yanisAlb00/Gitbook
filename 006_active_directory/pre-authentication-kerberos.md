@@ -25,7 +25,8 @@ sudo git clone https://github.com/ropnop/kerbrute.git
 ls dist/
 ./kerbrute_linux_amd64 
 sudo mv kerbrute_linux_amd64 /usr/local/bin/kerbrute
-kerbrute userenum -d INLANEFREIGHT.LOCAL --dc 172.16.5.5 jsmith.txt -o valid_ad_users
+kerbrute userenum -d corp.com --dc 192.168.152.70 /opt/seclists/Usernames/xato-net-10-million-usernames.txt -o valid_ad_users
+
 ```
 
 ## Alternative : Smartbrute (Python)
