@@ -44,6 +44,7 @@
     * [WMI](007\_lateralisation/windows/wmi.md)
     * [Winrs](007\_lateralisation/windows/winrs.md)
     * [Psexec](007\_lateralisation/windows/psexec.md)
+    * [Pass The Hash (Pth)](007\_lateralisation/windows/pass-the-hash-pth.md)
 * [008\_PrivEsc](007\_privesc/README.md)
   * [Linux](007\_privesc/linux/README.md)
     * [SetUID Privilege escalation](007\_privesc/linux/setuid-privilege-escalation.md)
