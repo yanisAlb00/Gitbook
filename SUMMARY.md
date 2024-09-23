@@ -39,6 +39,7 @@
   * [Kerberoasting](006\_active\_directory/kerberoasting.md)
   * [Silver Tickets](006\_active\_directory/silver-tickets.md)
   * [DCSync](006\_active\_directory/dcsync.md)
+  * [Golden Ticket](006\_active\_directory/golden-ticket.md)
 * [007\_Lateralisation](007\_lateralisation/README.md)
   * [Windows](007\_lateralisation/windows/README.md)
     * [WMI](007\_lateralisation/windows/wmi.md)
