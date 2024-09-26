@@ -51,6 +51,8 @@
     * [Pass The Ticket](007\_lateralisation/windows/pass-the-ticket.md)
 * [008\_PrivEsc](007\_privesc/README.md)
   * [Linux](007\_privesc/linux/README.md)
+    * [Situational Awareness](008\_privesc/linux/situational-awareness.md)
     * [SetUID Privilege escalation](007\_privesc/linux/setuid-privilege-escalation.md)
+    * [Page](008\_privesc/linux/page.md)
   * [Windows](007\_privesc/windows.md)
 * [009\_Persistence](008\_persistence.md)
