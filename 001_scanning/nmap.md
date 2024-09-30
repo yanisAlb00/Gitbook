@@ -21,3 +21,8 @@ Default Nmap scan with versions :
 nmap -sC -sV -oA nmap -iL hosts.lst --stats-every=5s
 ```
 
+Common port scan
+
+```bash
+nmap -sS -p- $TARGET --stats-every=5s
+```
