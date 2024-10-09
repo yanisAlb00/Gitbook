@@ -2,12 +2,10 @@
 
 ## Ffuf
 
-
-
 ### Directory fuzzing
 
 ```bash
-ffuf -w /opt/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://192.168.207.120/FUZZ
+ffuf -w /opt/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://192.168.207.120/FUZZ/
 ```
 
 ### Extension fuzzing
