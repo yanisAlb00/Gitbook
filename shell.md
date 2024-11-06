@@ -58,7 +58,9 @@ export PATH=$PATH:/path/to/custom/command
 
 Pour faire persister la modification, il faut ajouter cette commande au fichier `.bashrc` du /home ou \~ de l'utilisateur
 
-### Bash History et rappel de commande
+### Bash History
+
+#### Rappel de commande
 
 ```
 history
@@ -81,6 +83,37 @@ drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Templates
 drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Videos
 
 ```
+
+#### Recherche de commande
+
+```
+CTRL +R
+(reverse-i-search)`Down': file Downloads/*
+
+```
+
+## Alias d'une commande
+
+```
+vi .bashrc
+
+alias ll='ls -lrtha';
+```
+
+## Lister les alias
+
+```
+alias
+alias ll='ls -lrtha'
+alias ls='ls --color=auto'
+
+```
+
+
+
+
+
+
 
 
 
