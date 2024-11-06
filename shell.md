@@ -58,6 +58,32 @@ export PATH=$PATH:/path/to/custom/command
 
 Pour faire persister la modification, il faut ajouter cette commande au fichier `.bashrc` du /home ou \~ de l'utilisateur
 
+### Bash History et rappel de commande
+
+```
+history
+   17  ls -l
+   18  file Downloads/
+   19  file Downloads/*
+   20  echo $PATH
+   21  cat .bashrc 
+   22  history
+yanis@work:~$ !17
+ls -l
+total 32
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Desktop
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Documents
+drwxr-xr-x 2 yanis yanis 4096 Nov  6 18:03 Downloads
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Music
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Pictures
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Public
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Templates
+drwxr-xr-x 2 yanis yanis 4096 Oct 22 18:12 Videos
+
+```
+
+
+
 
 
 
