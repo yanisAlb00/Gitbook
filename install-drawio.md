@@ -60,6 +60,7 @@ vi .bashrc
 Execute application
 
 ```
-drawio
+drawio &> /dev/null &
+[1] 118490
 ```
 
