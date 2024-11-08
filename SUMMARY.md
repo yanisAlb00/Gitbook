@@ -16,3 +16,4 @@
 * [Shell](shell.md)
 * [Arborescence](arborescence.md)
 * [Install RPM](install-rpm.md)
+* [Install drawio](install-drawio.md)
