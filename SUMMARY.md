@@ -15,3 +15,4 @@
 * [Memory Segmentation](memory-segmentation.md)
 * [Shell](shell.md)
 * [Arborescence](arborescence.md)
+* [Install RPM](install-rpm.md)
