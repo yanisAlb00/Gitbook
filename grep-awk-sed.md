@@ -129,4 +129,23 @@ BEGIN {sum=0} = Init of sum variable
 
 END {print sum} = Printing the sum of each file size in bytes
 
-&#x20;
+## Sed
+
+sed signifie Stream EDitor
+
+```
+sed 's/[D|d]ebian/Ubuntu/' /etc/os-release > /home/yanis/os-release
+```
+
+L'option -i permet d'écrire les modficiations dans le fichier appelé
+
+```
+sed -i 's/[D|d]ebian/Ubuntu/' /home/yanis/os-release
+```
+
+Afficher une sous-partie d'un fichier
+
+```
+sed -n 2,6p /etc/passwd
+```
+
