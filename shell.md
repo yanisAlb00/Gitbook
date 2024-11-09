@@ -41,6 +41,15 @@ Downloads/Conditions Générales de réservation.pdf:                           
 
 ```
 
+### Obtenir des informations sur une commande
+
+```
+type cat
+cat is hashed (/usr/bin/cat)
+```
+
+
+
 ### Afficher les répertoires dans le PATH
 
 ```
