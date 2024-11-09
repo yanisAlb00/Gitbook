@@ -17,3 +17,4 @@
 * [Arborescence](arborescence.md)
 * [Install RPM](install-rpm.md)
 * [Install drawio](install-drawio.md)
+* [Canaux sur Linux](canaux-sur-linux.md)
