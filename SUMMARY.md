@@ -18,3 +18,5 @@
 * [Install RPM](install-rpm.md)
 * [Install drawio](install-drawio.md)
 * [Canaux sur Linux](canaux-sur-linux.md)
+* [Structure de fichiers inode.c](structure-de-fichiers-inode.c.md)
+* [Liens durs vs Liens symboliques](liens-durs-vs-liens-symboliques.md)
