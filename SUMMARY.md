@@ -23,3 +23,4 @@
 * [Gestion des droits](gestion-des-droits.md)
 * [Gestion du réseau](gestion-du-reseau.md)
 * [Process monitoring](process-monitoring.md)
+* [Services management on Linux](services-management-on-linux.md)
