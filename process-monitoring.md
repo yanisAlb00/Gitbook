@@ -1,6 +1,6 @@
 # Process monitoring
 
-Obtenir la liste des utilisateurs connectés sur le système
+### Obtenir la liste des utilisateurs connectés sur le système
 
 ```
 // who et w sont équivalents
@@ -13,7 +13,7 @@ yanis    tty2     tty2             Sat11    2days  0.07s  0.06s /usr/libexec/gno
 
 ```
 
-Lister tous les processus en cours sur le système
+### Lister tous les processus en cours sur le système
 
 ```
 ps -ef
@@ -33,7 +33,7 @@ root          14       2  0 Nov09 ?        00:00:03 [ksoftirqd/0]
 
 ```
 
-Tracer l'arborescence des processus
+### Tracer l'arborescence des processus
 
 ```
 ps -edf --forest
@@ -75,13 +75,41 @@ systemd─┬─ModemManager───2*[{ModemManager}]
         │         ├─at-spi2-registr──
 ```
 
+Filtrer sur un utilisateur ou un mot clé
+
+```
+ps -edf | grep root
+```
+
 Equivalent du gestionnaire de tâches Windows
 
 ```
 top
 ```
 
-Modifier la priorité associée à un processus :&#x20;
+### Modifier la priorité associée à un processus
 
-La priorité associée à un processus s'étend de -20 à 20. Plus la valeur est élevée, moins le processus est gourmand en CPU.
+La priorité associée à un processus s'étend de -20 à 20. Plus la valeur est élevée, moins le processus est gourmand en CPU. On dit que plus le score est élevé, plus il est gentil (NICE) d'où le nom de la commande "renice"
+
+```
+renice prio pid
+```
+
+### Terminer un processus
+
+* Le noyau Linux peut envoyer des signaux à ces processus
+* Un processus peut envoyer un signal à un autre processus
+* Et un processus peut même s’envoyer à lui-même un signal
+
+Sous Linux, il existe 30 signaux principaux normalisés, numérotés de 1 à 30. Ainsi lorsqu'un processus reçoit un signal, en fonction de sa nature, il peut l’"**écouter**" et appliquer son message ou bien **l’ignorer**.&#x20;
+
+3 signaux permettent d'interrompre un processus&#x20;
+
+1. SIGINT (signal numéro 2) : CTRL+C
+2. SIGTERM (signal numéro 15)
+3. SIGKILL (signal numéro 9)
+
+SIGINT et SIGTERM : terminaison propre (on laisse le processus se terminer tout seul)
+
+SIGKILL : terminaison pas propre (les ressources associées aux processus ne sont pas libérer) . Le signal n'est pas envoyé au processus en question mais aux processus init ou systemd qui se chargent de tuer le processus
 
