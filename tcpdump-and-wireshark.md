@@ -21,7 +21,7 @@ tcpdump port 443 -w /home/yanis/capture443.dump
 ### Install wireshark to analyze traffic
 
 ```
-apt-get install wireshark
+apt update && apt-get install wireshark
 ```
 
 
