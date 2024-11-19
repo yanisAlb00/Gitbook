@@ -38,9 +38,9 @@ La base de registre est accessible via :
 * Sur votre clavier, appuyez sur la touche Windows  + R
 * Dans la fenêtre exécutez, saisissez **regedit** puis **OK**.
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-![](<.gitbook/assets/image (1) (1).png>)\
+![](<.gitbook/assets/image (2).png>)\
 
 
 La clef _Start_ qui permet de définir le type de démarrage, ainsi la valeur :
@@ -62,7 +62,7 @@ Une liste de ces groupes et services peut être trouvé dans la base de registre
 HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\Svchost
 ```
 
-![](<.gitbook/assets/image (3).png>)
+![](<.gitbook/assets/image (4).png>)
 
 Exemple de commande qui permet de lancer tous les services dans le groupe netsvcs :
 

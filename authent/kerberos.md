@@ -4,7 +4,7 @@ La différence majeure avec NTLM est que le client n'interagit pas avec le serve
 
 Le rôle de KDC est souvent porté par le Domain Controller.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Step 1 = AS-REQ
 
