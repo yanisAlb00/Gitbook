@@ -49,3 +49,24 @@ int main() {
 }
 ```
 
+Example of code form CS50 :&#x20;
+
+```c
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char string[3]="HI!";
+    int length= strlen(string);
+    printf("String length is : %i\n",length);
+    printf("%s\n",string);
+    printf("%p\n",&string);
+    for(int i=0; i<length;i++)
+    {
+        printf("address is : %p\n",&string[i]);
+        printf("value is : %c\n",string[i]);
+    }
+    
+}
+```
+
