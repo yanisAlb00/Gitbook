@@ -56,7 +56,7 @@ Example of code form CS50 :&#x20;
 #include <string.h>
 int main(void)
 {
-    char string[3]="HI!";
+    char *string="HI!";
     int length= strlen(string);
     printf("String length is : %i\n",length);
     printf("%s\n",string);
@@ -66,7 +66,8 @@ int main(void)
         printf("address is : %p\n",&string[i]);
         printf("value is : %c\n",string[i]);
     }
-    
+    printf("address is : %p\n",&string[length]);
+    printf("value is : %b\n",string[length]);
 }
 ```
 
