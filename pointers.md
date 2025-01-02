@@ -51,6 +51,10 @@ int main() {
 
 Example of code form CS50 :&#x20;
 
+A string is a pointer to a char value (1byte = 8 bits).
+
+The content of the string is all the chars following this value until null byte (/0 : all bits put at 0)
+
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -69,5 +73,24 @@ int main(void)
     printf("address is : %p\n",&string[length]);
     printf("value is : %b\n",string[length]);
 }
+```
+
+result :&#x20;
+
+```bash
+yanis@work:~/gitbook-hacknotes$ make string
+cc     string.c   -o string
+yanis@work:~/gitbook-hacknotes$ ./string 
+String length is : 3
+HI!
+0x7fff4de6e600
+address is : 0x556e6e7bc004
+value is : H
+address is : 0x556e6e7bc005
+value is : I
+address is : 0x556e6e7bc006
+value is : !
+address is : 0x556e6e7bc007
+value is : 0
 ```
 
