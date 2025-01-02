@@ -66,3 +66,44 @@ int main()
     function();
 }
 ```
+
+
+
+Example : swap 2 values by using "Passing by value"
+
+\--> Does not work because values inside swap function are local variables and not global ones
+
+```c
+#include<stdio.h>
+
+void swap(int a, int b);
+
+int main(void)
+{
+    int x=1;
+    int y=2;
+    printf("x is %i and y is %i\n",x,y);
+    swap(x,y);
+    printf("x is %i and y is %i\n",x,y);
+
+}
+
+void swap(int a, int b)
+{
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
+```
+
+
+
+```bash
+yanis@work:~/gitbook-hacknotes$ make swap
+cc     swap.c   -o swap
+yanis@work:~/gitbook-hacknotes$ ./swap
+x is 1 and y is 2
+x is 1 and y is 2
+```
+
+Need to use method "Passing by reference"
