@@ -12,6 +12,7 @@
 * [Variables in C](variables-in-c.md)
 * [Recursion in C](recursion-in-c.md)
 * [Pointers](pointers.md)
+* [Arrays , Linked Lists and Trees in C](arrays-linked-lists-and-trees-in-c.md)
 * [Typecasting](typecasting.md)
 * [Memory Segmentation](memory-segmentation.md)
 * [Shell](shell.md)
