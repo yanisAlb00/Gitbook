@@ -64,7 +64,7 @@ Mario -> HASH FUNCTION -> 12
 ```c
 # include <ctype.h>
 
-int hash (const char* contact)
+unsigned int hash (const char* contact)
 {
     return toupper(contact[0]) -'A';
 }
