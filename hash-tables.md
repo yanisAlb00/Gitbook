@@ -54,3 +54,19 @@ dom
 ```
 
 The size of that array is 26³ in memory but we now reach constant time to find a contact if don't have a lot of collisions O(1)
+
+Hash function role is to output a number regarding the first letter of the name
+
+```
+Mario -> HASH FUNCTION -> 12
+```
+
+```c
+# include <ctype.h>
+
+int hash (char* contact)
+{
+    return toupper(contact[0]) -'A';
+}
+```
+
