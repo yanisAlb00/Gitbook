@@ -32,55 +32,145 @@ sudo ip link set dev tun0 mtu 1250
 
 ## Scanning
 
-### IF Network
-
-* ping sweep
+### Ping sweep
 
 ```
 nmap -v -sn 192.168.50.1-253 -oG ping-sweep.txt --stats-every=5s
 ```
 
-* put list of alive hosts in hosts.lst
-
 ```
 grep Up ping-sweep.txt | cut -d " " -f 2 > hosts.lst
 ```
 
-### ELSE IF Single Host
-
-* put single host in hosts.lst
-
-```
-export TARGET = 192.168.50.1
-ping $TARGET
-echo $TARGET > hosts.lst
-```
-
-### FOR EACH host IN hosts.lst
-
-* SYN-SCAN TCP of common ports
+### SYN-SCAN TCP of common ports
 
 ```
 nmap -sS -iL hosts.lst --stats-every=5s
 ```
 
-* Scan UDP of common ports
+### Scan UDP of common ports
 
 ```
 nmap -sS -iL hosts.lst --stats-every=5s
 ```
 
-* SYN-SCAN TCP of all ports
+### SYN-SCAN TCP of all ports
 
 ```
 nmap -sS -p- -iL hosts.lst --stats-every=5s
 ```
 
-* Scan UDP of all ports
+### Scan UDP of all ports
 
 ```
 nmap -sU -p- -iL hosts.lst --stats-every=5s
 ```
+
+### Global scan
+
+```
+nmap -sC -sV -oA nmap $TARGET  --stats-every=5s
+```
+
+## SMB Enumeration
+
+```
+nmap $TARGET -sV -sC -p139,445 --stats-every=5s
+```
+
+```
+nmap -p445 --script=smb-enum-shares $TARGET --stats-every=5s
+```
+
+```
+netexec smb $TARGET -u guest -p "" --shares
+```
+
+```
+smbmap -u guest -H $TARGET -r ADMIN$
+```
+
+```
+netexec smb $TARGET -u guest -p "" --users
+```
+
+```
+smbclient -N -L //$TARGET
+smbmap -H $TARGET
+smbmap -H $TARGET -r notes
+smbmap -H $TARGET --download "notes\note.txt"
+smbmap -H $TARGET --upload test.txt "notes\test.txt"
+```
+
+## SMTP Enumeration
+
+```
+telnet $TARGET 25
+```
+
+```
+nmap $TARGET -sC -sV -p25 --stats-every=5s
+```
+
+```
+smtp-user-enum -U /opt/seclists/Usernames/top-usernames-shortlist.txt $TARGET 25 
+```
+
+
+
+## IMAP Enumeration
+
+```
+telnet $TARGET 143
+```
+
+```
+1 LIST "" *
+1 NO Authenticate first
+1 LOGIN offsec lab
+1 NO Invalid user name or password. Please use full email address as user name.
+
+1 LOGOUT
+```
+
+## POP3 Enumeration
+
+```
+telnet $TARGET 110
+```
+
+```
++OK POP3
+USER offsec PASS lab
++OK Send your password
+PASS lab
+-ERR Invalid user name or password. Please use full email address as user name.
+
+```
+
+
+
+
+
+
+
+## Web enumeration
+
+Extension fuzzing
+
+```
+ffuf -w /opt/seclists/Discovery/Web-Content/web-extensions.txt:FUZZ -u http://$TARGET/indexFUZZ
+```
+
+
+
+Directory fuzzing&#x20;
+
+```
+ffuf -w /opt/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://$TARGET/FUZZ
+```
+
+
 
 ## Common-Web attacks
 
